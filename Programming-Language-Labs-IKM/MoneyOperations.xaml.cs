@@ -61,5 +61,22 @@ namespace Programming_Language_Labs_IKM
             UserMoney.AddKopeeks(uint.Parse(KopeekAdd_TextBox.Text));
             UpdateOutputLabel();
         }
+
+        private void CountRubles_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (SumSub_ComboBox.SelectedIndex ==  0 ){
+                if (Order_ComboBox.SelectedIndex == 0)
+                    UserMoney = UserMoney + uint.Parse(RublesAdd_TextBox.Text);
+                else
+                    UserMoney = uint.Parse(RublesAdd_TextBox.Text) + UserMoney;
+            } else {
+                if (Order_ComboBox.SelectedIndex == 0)
+                    UserMoney = UserMoney - uint.Parse(RublesAdd_TextBox.Text);
+                else
+                    UserMoney = uint.Parse(RublesAdd_TextBox.Text) - UserMoney;
+            }
+
+            UpdateOutputLabel();
+        }
     }
 }
