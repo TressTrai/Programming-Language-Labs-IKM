@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,11 +24,24 @@ namespace Programming_Language_Labs_IKM
         public MoneyOperations()
         {
             InitializeComponent();
+
+            // При запуске отображаем сколько у нас денег
+            Money UserMoney = Container.UserMoney;
+
+            OutputMoney_Label.Content = "У вас " + UserMoney;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        // Отображаем только цифры при вводе в текст бокс
+        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
-
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
         }
+
+        private void IncrementMoney(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
     }
 }

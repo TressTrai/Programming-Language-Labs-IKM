@@ -50,5 +50,8 @@
             <Setter Property="Margin" Value="0,10,0,0" />
             <Setter Property="HorizontalAlignment" Value="Right" />
         </Style>
+
     </Application.Resources>
+    
+    
 </Application>

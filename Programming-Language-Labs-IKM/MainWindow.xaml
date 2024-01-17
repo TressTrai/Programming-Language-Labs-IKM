@@ -5,5 +5,5 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Programming_Language_Labs_IKM"
         mc:Ignorable="d"
-        Title="Hi World" Height="350" Width="700" Source="MoneyOperations.xaml">
+        Title="Hi World" Height="350" Width="700" Source="MoneyInput.xaml">
 </NavigationWindow>
