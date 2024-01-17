@@ -7,7 +7,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MoneyOperations">
-
+    
+    <!-- Сетка, чтобы красиво разместить элементы на экране -->
     <Grid Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -25,26 +26,41 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        
+        <!-- Подсчет денег на счету -->
         <Label Content="У вас: " HorizontalAlignment="Center"  VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="3"/>
 
-        <Button Grid.Column="2" Content="+1" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Click="Button_Click" Grid.RowSpan="1"/>
-        <Button Content="-1" HorizontalAlignment="Right"  Grid.Row="2" VerticalAlignment="Center"/>
+        <!-- Операции с копейками -->
         <Label Grid.Column="0" Content="Копейки" HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
+        <!-- Унарные операции -->
+        <Button Grid.Column="2" Content="+1" HorizontalAlignment="Left" Grid.Row="2" VerticalAlignment="Center" Click="Button_Click" Grid.RowSpan="1"/>
+        <Button Content="-1" HorizontalAlignment="Right"  Grid.Row="2" VerticalAlignment="Center"/>
+        
+        <!-- Добавление копеек -->
         <TextBox HorizontalAlignment="Center" Height="29" Grid.Row="2" TextWrapping="Wrap" Text="+ копейки" VerticalAlignment="Center" Width="164" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1"/>
+        <!-- Кнопка для обновления счета копеек, если не удастся сделать подсчет в реал тайме -->
         <Button Content="Рассчитать" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1"/>
 
-
+        <!-- Операции с рублями-->
         <Label Content="Рубли" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="3"/>
+        
+        <!-- Числовое поле -->
         <TextBox HorizontalAlignment="Center" Grid.Row="7" TextWrapping="Wrap" Text="Число" VerticalAlignment="Center" Width="120" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        
+        <!-- Кнопка для обновления счета копеек, если не удастся сделать подсчет в реал тайме -->
         <Button Content="Расчитать" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Grid.ColumnSpan="3"/>
+        
+        <!-- Комбо бокс, позволяющих выбрать складываем или вычитаем -->
         <ComboBox HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Width="120" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
             <ComboBoxItem Content="Сложить"/>
             <ComboBoxItem Content="Вычесть"/>
         </ComboBox>
+
+        <!-- Комбо бокс, позволяющих выбрать как мы складываем или вычитаем -->
         <ComboBox HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Width="120" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
-            <ComboBoxItem Content="Из счета"/>
-            <ComboBoxItem Content="В счет"/>
+            <ComboBoxItem Content="Счет Ввод"/>
+            <ComboBoxItem Content="Ввод Счет"/>
         </ComboBox>
 
     </Grid>
