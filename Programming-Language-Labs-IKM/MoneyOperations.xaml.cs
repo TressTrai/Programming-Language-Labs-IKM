@@ -21,13 +21,19 @@ namespace Programming_Language_Labs_IKM
     /// </summary>
     public partial class MoneyOperations : Page
     {
+
+        Money UserMoney = Container.UserMoney;
+
         public MoneyOperations()
         {
             InitializeComponent();
 
             // При запуске отображаем сколько у нас денег
-            Money UserMoney = Container.UserMoney;
 
+            UpdateOutputLabel();
+        }
+        private void UpdateOutputLabel()
+        {
             OutputMoney_Label.Content = "У вас " + UserMoney;
         }
 
@@ -38,10 +44,22 @@ namespace Programming_Language_Labs_IKM
             e.Handled = regex.IsMatch(e.Text);
         }
 
-        private void IncrementMoney(object sender, RoutedEventArgs e)
+        private void IncrementKopeek_button_Click(object sender, RoutedEventArgs e)
         {
-            
+            UserMoney++;
+            UpdateOutputLabel();
         }
 
+        private void DecrementKopeek_button_Click(object sender, RoutedEventArgs e)
+        {
+            UserMoney--;
+            UpdateOutputLabel();
+        }
+
+        private void CountKopeek_Button_Click(object sender, RoutedEventArgs e)
+        {
+            UserMoney.AddKopeeks(uint.Parse(KopeekAdd_TextBox.Text));
+            UpdateOutputLabel();
+        }
     }
 }
