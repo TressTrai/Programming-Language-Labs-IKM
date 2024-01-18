@@ -34,7 +34,7 @@ namespace Programming_Language_Labs_IKM
         // Обновление счета
         private void UpdateOutputLabel()
         {
-            OutputMoney_Label.Content = "Счет " + UserMoney;
+            OutputMoney_Label.Content = "Счет: " + UserMoney;
         }
 
         // Отображаем только цифры при вводе в текст бокс
@@ -120,7 +120,25 @@ namespace Programming_Language_Labs_IKM
         private void implicitKopeeks_button_Click(object sender, RoutedEventArgs e)
         {
             double temp = UserMoney;
-            MessageBox.Show("У вас целых " + temp + " рублей", "Счет в рублях", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show($"У вас целых {temp:f2} рублей", "Счет в рублях", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void SumSub_ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (Left_ComboItem == null || Right_ComboItem == null) return;
+
+            if (SumSub_ComboBox.SelectedIndex == 0)
+            {
+                Left_ComboItem.Content = "Счет + Ввод";
+                Right_ComboItem.Content = "Ввод + Счет";
+
+                // Выбран пункт вычитания
+            }
+            else
+            {
+                Left_ComboItem.Content = "Счет - Ввод";
+                Right_ComboItem.Content = "Ввод - Счет";
+            }
         }
     }
 }

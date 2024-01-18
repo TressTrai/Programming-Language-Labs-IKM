@@ -42,7 +42,7 @@
 
 
         <Image Grid.RowSpan="6" Source="/zhongli.jpg" Stretch="UniformToFill" StretchDirection="DownOnly"/>
-        <Label Grid.Column="1" Content="Накрутка денег игры Real Impact" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" FontSize="22" IsEnabled="False" Background="#FFBE946E" BorderBrush="#FF694835" Foreground="#FFFDF3AC" Margin="10,20,10,0"/>
+        <Label Grid.Column="1" Content="Накрутка денег игры Real Impact" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" FontSize="22" IsEnabled="False" Background="#FFBE946E" BorderBrush="#FF694835" Foreground="#FFFDF3AC" Margin="10,20,10,0" BorderThickness="1,1,1,1"/>
 
 
     </Grid>
