@@ -50,7 +50,7 @@
         <Label Content="Рубли" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="3" FontSize="18" Foreground="#FFF4E6A5"/>
         
         <!-- Числовое поле -->
-        <TextBox x:Name="RublesAdd_TextBox" HorizontalAlignment="Center" Grid.Row="7" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" Width="120" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="NumberValidationTextBox" TextChanged="InputMoneyTextBox_TextChanged" MaxLength="10" MaxLines="1"/>
+        <TextBox x:Name="RublesAdd_TextBox" HorizontalAlignment="Center" Grid.Row="7" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" Width="164" Height="29" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" PreviewTextInput="NumberValidationTextBox" TextChanged="InputMoneyTextBox_TextChanged" MaxLength="10" MaxLines="1"/>
         
         <!-- Кнопка для обновления счета копеек, если не удастся сделать подсчет в реал тайме -->
         <Button x:Name="CountRubles_Button" Content="Рассчитать" HorizontalAlignment="Center" Grid.Row="8" VerticalAlignment="Center" Grid.ColumnSpan="3" Click="CountRubles_Button_Click"/>
@@ -70,7 +70,9 @@
         
         <Button x:Name="explicitRubles_button" Grid.Column="2" Content="Посмотреть на количество рублей (отдельно)" HorizontalAlignment="Center" Grid.Row="7" VerticalAlignment="Center" Click="explicitRubles_button_Click" />
         <Button x:Name="implicitKopeeks_button" Grid.Column="2" Content="Посмотреть на количество копеек (отдельно)" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Click="implicitKopeeks_button_Click"/>
-        
+        <Label Content="Введите количество копеек для сложения: " HorizontalAlignment="Right" Grid.Row="2"  Grid.Column="0" VerticalAlignment="Center"/>
+        <Label Content="Введите количество рублей: " HorizontalAlignment="Right" Grid.Row="7"  Grid.Column="0" VerticalAlignment="Center"/>
+
 
     </Grid>
 </Page>
