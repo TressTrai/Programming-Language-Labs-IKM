@@ -38,7 +38,7 @@
         <Button x:Name="DecrementKopeek_button" Content="-1" HorizontalAlignment="Right"  Grid.Row="3" VerticalAlignment="Center" Click="DecrementKopeek_button_Click"/>
         
         <!-- Добавление копеек -->
-        <TextBox x:Name="KopeekAdd_TextBox" HorizontalAlignment="Center" Height="29" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="164" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" PreviewTextInput="NumberValidationTextBox" MaxLength="10" MaxLines="1" AutomationProperties.HelpText="проверка"/>
+        <TextBox x:Name="KopeekAdd_TextBox" HorizontalAlignment="Center" Height="29" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Center" Width="164" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Column="1" PreviewTextInput="NumberValidationTextBox" MaxLength="10" MaxLines="1" Text="0"/>
         <!-- Кнопка для обновления счета копеек, если не удастся сделать подсчет в реал тайме -->
         <Button x:Name="CountKopeek_Button" Content="Рассчитать" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Grid.ColumnSpan="1" Grid.Column="1" Click="CountKopeek_Button_Click" />
 

@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Programming_Language_Labs_IKM
 {
@@ -31,21 +32,71 @@ namespace Programming_Language_Labs_IKM
         {
             Regex regex = new Regex("[^0-9]+");
             e.Handled = regex.IsMatch(e.Text);
+
         }
 
         // Сохраняем данные о вводе счета пользователя
         private void Button_Click_Confirm(object sender, RoutedEventArgs e)
         {
-            string rubles = RublesTextBox.Text;
-            string kopeeks = KopeeksTextBox.Text;
+            string user_rubles = RublesTextBox.Text;
+            string user_kopeeks = KopeeksTextBox.Text;
+
+            uint rubles = 0;
+            byte kopeeks = 0;
+
+            bool error = false;
+
+            string messageBoxText = "Неизвестная ошибка";
+            string caption = "Ошибка";
+
+            // проверка на пустые строки и на то есть ли в строке символы
+            if (user_rubles == "" || user_kopeeks == "" || user_kopeeks.Any(Char.IsLetter) || user_rubles.Any(Char.IsLetter)) {
+                messageBoxText = "Неправильно введенные данные. Проверьте, что все поля заполнены цифрами";
+                caption = "Ошибка ввода данных";
+                error = true;
+            }
+
+            // пытаемся преобразовать рубли
+            else if (!uint.TryParse(user_rubles, out rubles))
+            {
+                messageBoxText = "В банке недостаточно рублей, чтобы зачислить их вам. Доступно: 4294967295";
+                caption = "Нехватка рублей";
+                error = true;
+            }
+
+            // пытаемся преобразовать копейки
+            else if (!byte.TryParse(user_kopeeks, out kopeeks))
+            {
+                messageBoxText = "В банке недостаточно копеек, чтобы зачислить их вам. Доступно: 255";
+                caption = "Нехватка копеек";
+                error = true;
+            }
+
+            // в случае ошибки выводим сообщение
+            if (error)
+            {
+                MessageBox.Show(messageBoxText, caption, MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
             // Запись ресурса Money
-            Money UserMoney = new Money(uint.Parse(rubles), byte.Parse(kopeeks));
+            Money UserMoney = new Money(rubles, kopeeks);
             Container.UserMoney = UserMoney;
 
             // Переход на следущую страницу
             MoneyOperations nextPage = new MoneyOperations();
             this.NavigationService.Navigate(nextPage);
         }
+
+
+        // Удаление пробелов с текстбокса
+        private void InputMoneyTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var textBox = (TextBox)sender;
+            textBox.Text = textBox.Text.Replace(" ", string.Empty);
+            textBox.SelectionStart = textBox.Text.Length;
+
+        }
+
     }
 }

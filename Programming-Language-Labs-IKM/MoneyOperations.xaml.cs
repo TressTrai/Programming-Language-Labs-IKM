@@ -21,17 +21,16 @@ namespace Programming_Language_Labs_IKM
     /// </summary>
     public partial class MoneyOperations : Page
     {
-
+        // Считывание данных с первой страницы
         Money UserMoney = Container.UserMoney;
 
         public MoneyOperations()
         {
             InitializeComponent();
-
-            // При запуске отображаем сколько у нас денег
-
             UpdateOutputLabel();
         }
+
+        // Обновление счета
         private void UpdateOutputLabel()
         {
             OutputMoney_Label.Content = "У вас " + UserMoney;
@@ -44,17 +43,20 @@ namespace Programming_Language_Labs_IKM
             e.Handled = regex.IsMatch(e.Text);
         }
 
+        // Обработка события на кнопку для инкремента копеек
         private void IncrementKopeek_button_Click(object sender, RoutedEventArgs e)
         {
             UserMoney++;
             UpdateOutputLabel();
         }
 
+        // Обработка события на кнопку для декремента копеек
         private void DecrementKopeek_button_Click(object sender, RoutedEventArgs e)
         {
             UserMoney--;
             UpdateOutputLabel();
         }
+
 
         private void CountKopeek_Button_Click(object sender, RoutedEventArgs e)
         {
