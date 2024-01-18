@@ -5,36 +5,44 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Programming_Language_Labs_IKM"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="600"
       Title="MoneyInput">
 
-    <Grid Background="White">
-        
+    <Grid Background="#FFF4E6A5" HorizontalAlignment="Center" VerticalAlignment="Center">
+
         <!-- Сетка, чтобы красиво разместить элементы на экране -->
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="6*" />
-            <ColumnDefinition Width="6*" />
-            <ColumnDefinition Width="6*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="6*" />
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="6*"/>
             <RowDefinition/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        
+        <Border BorderThickness="1" Grid.Column="1" Grid.Row="1" Background="#FFBE946E" Grid.ColumnSpan="2" Grid.RowSpan="4" Margin="3,3,3,6" BorderBrush="#FF413124"/>
+
+
         <!-- Заголовок -->
-        <Label Grid.Column="1" Grid.ColumnSpan="2"  Grid.Row="0" Content="Ввод денег" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        
+        <Label Grid.Column="1" Grid.ColumnSpan="2"  Grid.Row="1" Content="Ввод денег" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="20" Margin="0,42,0,0" Foreground="#FFF4E6A5"/>
+
         <!-- Ввод входных данных -->
-        <TextBox x:Name="RublesTextBox"  Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Text="0" PreviewTextInput="NumberValidationTextBox" MaxLength="10" MaxLines="1" TextChanged="InputMoneyTextBox_TextChanged"/>
-        <TextBox x:Name="KopeeksTextBox" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Text="0" PreviewTextInput="NumberValidationTextBox" MaxLength="3" MaxLines="1" TextChanged="InputMoneyTextBox_TextChanged"/>
-        <Label Grid.Column="1" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Content="Рубли"/>
-        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Content="Копейки"/>
-        
+        <TextBox x:Name="RublesTextBox"  Grid.Column="1" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Text="0" PreviewTextInput="NumberValidationTextBox" MaxLength="10" MaxLines="1" TextChanged="InputMoneyTextBox_TextChanged" Padding="5,5,5,5" ScrollViewer.CanContentScroll="True" Margin="5,5,5,5" FontSize="18" Background="#FFF4E6A5" Foreground="#FF694835" SelectionBrush="#FF694835"/>
+        <TextBox x:Name="KopeeksTextBox" Grid.Column="2" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Width="120" Text="0" PreviewTextInput="NumberValidationTextBox" MaxLength="3" MaxLines="1" TextChanged="InputMoneyTextBox_TextChanged" Padding="5,5,5,5" Margin="5,5,5,5" FontSize="18" Background="#FFF4E6A5" Foreground="#FF694835" SelectionBrush="#FF694835"/>
+        <Label Grid.Column="1" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Content="Рубли" FontSize="18" Foreground="#FFF4E6A5"/>
+        <Label Grid.Column="2" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Content="Копейки" FontSize="18" Foreground="#FFF4E6A5"/>
+
         <!-- Кнопка подтверждения, переход на следующую страницу -->
-        <Button Grid.Column="1" Content="Подтвердить" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Center" Click="Button_Click_Confirm"/>
+        <Button  Grid.Column="1" Content="Подтвердить" Grid.ColumnSpan="2" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Click="Button_Click_Confirm" FontSize="18" Background="#FF694835" Margin="0,10,0,10" Foreground="#FFBE946E" Padding="20,1,20,1" BorderBrush="#FF3A281D" Style="{StaticResource MyButtonStyle}"/>
+
+
+        <Image Grid.RowSpan="6" Source="/zhongli.jpg" Stretch="UniformToFill" StretchDirection="DownOnly"/>
+        <Label Grid.Column="1" Content="Накрутка денег игры Real Impact" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" FontSize="22" IsEnabled="False" Background="#FFBE946E" BorderBrush="#FF694835" Foreground="#FFFDF3AC" Margin="10,20,10,0"/>
 
 
     </Grid>

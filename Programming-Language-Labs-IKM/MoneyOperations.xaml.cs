@@ -111,5 +111,16 @@ namespace Programming_Language_Labs_IKM
             textBox.SelectionStart = textBox.Text.Length;
 
         }
+
+        private void explicitRubles_button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("У вас целых " + (uint)UserMoney + " рублей", "Счет в рублях", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void implicitKopeeks_button_Click(object sender, RoutedEventArgs e)
+        {
+            double temp = UserMoney;
+            MessageBox.Show("У вас целых " + temp + " рублей", "Счет в рублях", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
     }
 }

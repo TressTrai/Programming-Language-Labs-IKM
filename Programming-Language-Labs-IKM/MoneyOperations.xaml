@@ -28,7 +28,7 @@
         </Grid.RowDefinitions>
         
         <!-- Подсчет денег на счету -->
-        <Label x:Name="OutputMoney_Label" Content="У вас: " HorizontalAlignment="Center"  VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="3"/>
+        <Label x:Name="OutputMoney_Label" Content="Счет:" HorizontalAlignment="Center"  VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.ColumnSpan="3"/>
 
         <!-- Операции с копейками -->
         <Label Grid.Column="0" Content="Копейки" HorizontalAlignment="Center"  Grid.Row="1" VerticalAlignment="Center" Grid.ColumnSpan="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
@@ -62,6 +62,10 @@
             <ComboBoxItem x:Name="Left_ComboItem" Content="Счет Ввод"/>
             <ComboBoxItem x:Name="Right_ComboItem" Content="Ввод Счет"/>
         </ComboBox>
+        
+        
+        <Button x:Name="explicitRubles_button" Grid.Column="2" Content="Посмотреть на количество рублей (отдельно)" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Click="explicitRubles_button_Click" />
+        <Button x:Name="implicitKopeeks_button" Grid.Column="2" Content="Посмотреть на количество копеек (отдельно)" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Click="implicitKopeeks_button_Click"/>
 
     </Grid>
 </Page>
